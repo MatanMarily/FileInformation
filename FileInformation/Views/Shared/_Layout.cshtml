@@ -19,11 +19,6 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">@Html.ActionLink("Home", "Index", "Home")</li>
-                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Converting" ? "active" : "")">@Html.ActionLink("Converting", "Index", "Converting")</li>
-
-                @*<li class="active"><a href="@Url.Action("Index", "Home")">Home</a></li>
-                <li><a href="@Url.Action("Index", "Converting")">Converting</a></li>
-                <li><a href="#">Union&Joint</a></li>*@
             </ul>
         </div>
     </nav>
