@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "Converting";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/Converting.js"></script>
+    @*<script src="~/Scripts/Home.js"></script>*@
+    <link href="~/Content/Converting.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h4>Converting File</h4>
+    <h5 id="sub-header-imageTo">Convert image to</h5>
+
+    <div class="myContainer">
+        @*<form method="POST" action="~/Converting/SubmitTextTo" enctype="multipart/form-data">
+            <div class="input-group input-file" name="Fichier1">
+                <input type="text" class="form-control" placeholder='Choose a file...' />
+                <span class="input-group-btn">
+                    <button class="btn btn-default btn-choose" type="button">Choose</button>
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="submit_btn" class="btn btn-primary pull-right" value="Submit" disabled />
+                <button id="btn-reset" type="reset" class="btn btn-danger">Reset</button>
+            </div>
+        </form>*@
+
+        <form action="~/Converting/SubmitImageTo" method="post" enctype="multipart/form-data">
+            <div id="image-to" name="convert-image-to">
+                <select class="form-control form-control-sm">
+                    <option>Image(text) to file</option>
+                    <option>PDF</option>
+                    <option>Byte</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="file" style="visibility:hidden; height:0">
+
+                <div class="input-group input-file" name="Fichier1">
+                    <input type="text" class="form-control imageFormat" placeholder='Choose a file...' />
+                    <span class="input-group-btn">
+                        <button name="imageFormat" class="btn btn-default btn-choose" type="button">Choose</button>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="submit_btn_image" class="btn btn-primary pull-right" value="Submit"  />
+                </div>
+            </div>
+
+
+            @*<label for="file">Filename:</label>
+        <input type="file" name="file" id="file" />
+
+        <input type="submit" />*@
+        </form>
+
+        @*<div id="image-to" name="convert-image-to">
+            <select class="form-control form-control-sm">
+                <option>Image(text) to file</option>
+                <option>PDF</option>
+                <option>Byte</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="my-file" multiple="multiple" type="file" style="visibility:hidden; height:0">
+
+            <div class="input-group input-file" name="Fichier1">
+                <input type="text" class="form-control imageFormat" placeholder='Choose a file...' />
+                <span class="input-group-btn">
+                    <button name="imageFormat" class="btn btn-default btn-choose" type="button">Choose</button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" id="submit_btn_image" class="btn btn-primary pull-right" value="Submit" disabled />
+        </div>*@
+
+
+            @*<form method="POST" action="~/Converting/SubmitTextTo" enctype="multipart/form-data">
+                <div id="image-to" name="convert-image-to">
+                    <select class="form-control form-control-sm">
+                        <option>Image(text) to file</option>
+                        <option>PDF</option>
+                        <option>Byte</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="file" style="visibility:hidden; height:0">
+
+                    <div class="input-group input-file" name="Fichier1">
+                        <input type="text" class="form-control imageFormat" placeholder='Choose a file...' />
+                        <span class="input-group-btn">
+                            <button name="imageFormat" class="btn btn-default btn-choose" type="button">Choose</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="submit_btn_image" class="btn btn-primary pull-right" value="Submit" disabled />
+                </div>
+            </form>
+
+
+            <div class="part2">
+                <h5 id="sub-header-txtTo">Convert txt to</h5>
+                <div id="txt-to" name="convert-txt-to">
+                    <select class="form-control form-control-sm">
+                        <option>PDF</option>
+                        <option>CSV</option>
+                    </select>
+                </div>
+                <form method="POST" action="~/Converting/SubmitTextTo" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" style="visibility:hidden; height:0">
+
+                        <div class="input-group input-file" name="Fichier1">
+                            <input type="text" class="form-control txtFormat" placeholder='Choose a file...' />
+                            <span class="input-group-btn">
+                                <button name="txtFormat" class="btn btn-default btn-choose" type="button">Choose</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" id="submit_btn_txt" class="btn btn-primary pull-right" value="Submit" disabled />
+                    </div>
+                </form>
+            </div>*@
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">File System</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Converting" ? "active" : "")">@Html.ActionLink("Converting", "Index", "Converting")</li>
+
+                @*<li class="active"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li><a href="@Url.Action("Index", "Converting")">Converting</a></li>
+                <li><a href="#">Union&Joint</a></li>*@
+            </ul>
+        </div>
+    </nav>
+    @RenderBody()
+</body>
+</html>
+

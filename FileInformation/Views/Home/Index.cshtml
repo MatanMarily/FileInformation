@@ -1,0 +1,93 @@
+﻿@model FileInformation.Models.ReportViewModel
+@{
+    ViewBag.Title = "File System";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/Home.js"></script>
+    <link href="~/Content/Home.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h4>File information & filtering </h4>
+    <p id="p-actor-matan">© Matan Marily</p>
+    @{
+        try
+        {
+            if (Model.Error != string.Empty)
+            {
+                <div class="alert alert-warning">
+                    <strong>Warning!</strong> @Model.Error
+                </div>
+            }
+        }
+        catch { }
+    }
+
+    @using (Html.BeginForm("OpenFile", "Home", FormMethod.Post, new { encType = "multipart/form-data" }))
+    {
+        <div class="col-md-12 ">
+            <div class="col-md-4 left">
+                <div id="choose_file">
+                    <form method="POST" action="#" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <div class="input-group input-file" name="Fichier1">
+                                <input type="text" class="form-control" placeholder='Choose a file...' />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-choose" type="button">Choose</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" id="submit_btn" class="btn btn-primary pull-right" value="Submit" disabled />
+                            <button id="btn-reset" type="reset" class="btn btn-danger">Reset</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="str_find">
+                    <input type=text name="sub-str" placeholder="Put here your find string..." id="sub-str" />
+                    <input type="button" id="submit_btn_filter" class="btn btn-primary pull-right" value="Filter" disabled />
+                </div>
+
+                <div id="data_after">
+                    <div class="loader-filter" style="display:none"></div>
+                    <div id="div-filter" style="display:none">
+                        <div class="data-filter-div div-style">
+                        </div>
+
+                        <input id="download-button" value="Download" type="button" class="btn btn-warning" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 right">
+                <div id="data_file">
+                    @{
+                        bool ShowData = false;
+                        string combindedString = "";
+                        try
+                        {
+                            combindedString = string.Join("/n", @Model.DataFile.ToArray());
+                            ShowData = true;
+                        }
+                        catch { }
+                    }
+                </div>
+                @{
+                    if (ShowData)
+                    {
+                        string dataInformation = "FileName: " + @Model.FileName + "\n" + "Size file(Byte): " + @Model.ByteFileCount + "\n" + "Type: " + @Model.Type;
+                        <div class="data-information-div div-style">@dataInformation</div>
+                        <div class="loader"></div>
+                        <div style="display:none" class="all-data-div div-style">@combindedString</div>
+                    }
+                }
+            </div>
+        </div>
+    }
+</body>
+</html>
