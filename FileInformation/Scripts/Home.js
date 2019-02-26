@@ -1,4 +1,4 @@
-﻿function bs_input_file() {
+﻿$(function () {
     $(".input-file").before(
         function () {
             if (!$(this).prev().hasClass('input-ghost')) {
@@ -6,7 +6,7 @@
                 element.attr("name", $(this).attr("name"));
                 element.change(function () {
                     element.next(element).find('input').val((element.val()).split('\\').pop());
-                    $('#submit_btn').prop("disabled", false);                                     
+                    $('#submit_btn').prop("disabled", false);
                 });
                 $(this).find("button.btn-choose").click(function () {
                     element.click();
@@ -30,17 +30,17 @@
         $('#submit_btn').prop("disabled", true);
     });
 
-    if ($('.all-data-div').length > 0) {  
-        $('#submit_btn_filter').prop("disabled", false); 
+    if ($('.all-data-div').length > 0) {
+        $('#submit_btn_filter').prop("disabled", false);
         $('.loader').css("display", "inline-block");
     }
 
     $('#download-button').click(function () {
-        var url = "/Home/DownloadFile";        
-        $.post(url, function (data) {           
+        var url = "/Home/DownloadFile";
+        $.post(url, function (data) {
             alert("Thanks, your file are downloaded successfully!\n file is exsist in: C\\MyDownlads\\file.txt");
         });
-    }); 
+    });
 
     $(window).load(function () {
         if ($('.all-data-div').length > 0) {
@@ -68,9 +68,5 @@
         } else {
             alert("Enter at least one character to search");
         }
-    }) 
-}
-
-$(function () {
-    bs_input_file();
+    })
 });
