@@ -1,8 +1,7 @@
 # File Information
 
-System are get a file and show him.
-There is a possibility to choose some substring and find him in file.
-The system are show for us the result of all substring in file and we can download the file after filtering.
+A website allowing you to see a detail about a file, see the file and search a string on him.
+After receiving the result of searching is possible to download the file.
 
 ## Getting Started
 
