@@ -31,3 +31,13 @@ OR extract FileInformation and open the foler(if download ZIP)
 ## Author
 
 * **Matan Marily** - (https://github.com/MatanMarily)
+
+## Phothos
+**Home Page**
+![alt text](https://i.ibb.co/5KjcnKs/HomePage.jpg)
+
+**Open File**
+![alt text](https://i.ibb.co/TY7BMT8/OpenFile.jpg)
+
+**Filtering**
+![alt text](https://i.ibb.co/QfLm3FH/Filtering.jpg)
